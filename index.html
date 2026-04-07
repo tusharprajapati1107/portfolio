@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tushar Kumar — SFMC Developer</title>
+<title>Tushar Kumar - SFMC Developer</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -15,449 +15,129 @@
     --line: #E0DDD8;
     --card: #FFFFFF;
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.6; overflow-x: hidden; }
 
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.4rem 4rem;
-    background: rgba(247,245,240,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-logo {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    color: var(--ink);
-    text-decoration: none;
-  }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 4rem; background: rgba(247,245,240,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  .nav-logo { font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--ink); }
 
-  /* ── HERO ── */
-  #hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 0 4rem;
-    gap: 4rem;
-    padding-top: 80px;
-  }
-  .hero-left { animation: fadeUp 0.9s ease both; }
-  .hero-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-    display: flex; align-items: center; gap: 0.75rem;
-  }
-  .hero-tag::before {
-    content: '';
-    display: inline-block;
-    width: 32px; height: 1px;
-    background: var(--accent);
-  }
-  h1 {
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(3.5rem, 6vw, 5.5rem);
-    font-weight: 300;
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-    margin-bottom: 1.8rem;
-  }
+  /* HERO */
+  #hero { display: grid; grid-template-columns: 1fr 1fr; align-items: start; padding: 6rem 4rem 3rem; gap: 4rem; }
+  .hero-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.75rem; }
+  .hero-tag::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--accent); }
+  h1 { font-family: 'Inter', sans-serif; font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 300; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 1.2rem; }
   h1 em { font-style: italic; color: var(--accent); }
-  .hero-desc {
-    font-size: 1rem;
-    color: var(--muted);
-    max-width: 44ch;
-    line-height: 1.75;
-    margin-bottom: 2.5rem;
-  }
+  .hero-desc { font-size: 0.95rem; color: var(--muted); max-width: 44ch; line-height: 1.7; margin-bottom: 2rem; }
   .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary {
-    padding: 0.85rem 2rem;
-    background: var(--ink);
-    color: var(--bg);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid var(--ink);
-    transition: background 0.2s, color 0.2s;
-  }
+  .btn-primary { padding: 0.75rem 1.75rem; background: var(--ink); color: var(--bg); font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--ink); transition: background 0.2s; }
   .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
-  .btn-outline {
-    padding: 0.85rem 2rem;
-    background: transparent;
-    color: var(--ink);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid var(--line);
-    transition: border-color 0.2s, color 0.2s;
-  }
+  .btn-outline { padding: 0.75rem 1.75rem; background: transparent; color: var(--ink); font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--line); transition: border-color 0.2s; }
   .btn-outline:hover { border-color: var(--ink); }
+  .hero-right { display: flex; flex-direction: column; gap: 1.25rem; }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .stat-item { background: var(--bg); padding: 1.5rem; }
+  .stat-num { font-family: 'Inter', sans-serif; font-size: 2.4rem; font-weight: 300; color: var(--accent); line-height: 1; margin-bottom: 0.3rem; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .cert-strip { padding: 1rem 1.5rem; background: var(--ink); }
+  .cert-strip-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; }
+  .cert-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .cert-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; padding: 0.25rem 0.6rem; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.72); }
 
-  .hero-right {
-    animation: fadeUp 0.9s 0.2s ease both;
-    display: flex; flex-direction: column; gap: 1.5rem;
-  }
-  .stat-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-  }
-  .stat-item {
-    background: var(--bg);
-    padding: 1.75rem;
-  }
-  .stat-num {
-    font-family: 'Inter', sans-serif;
-    font-size: 2.8rem;
-    font-weight: 300;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: 0.4rem;
-  }
-  .stat-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .cert-strip {
-    padding: 1.25rem 1.75rem;
-    background: var(--ink);
-    color: var(--bg);
-  }
-  .cert-strip-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.75rem;
-  }
-  .cert-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .cert-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
-    padding: 0.3rem 0.7rem;
-    border: 1px solid rgba(255,255,255,0.15);
-    color: rgba(255,255,255,0.75);
-    white-space: nowrap;
-  }
+  /* SECTIONS */
+  section { padding: 3rem 4rem; }
+  .section-header { margin-bottom: 2.5rem; }
+  .section-index { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-family: 'Inter', sans-serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300; line-height: 1.1; }
+  .divider { height: 1px; background: var(--line); }
 
-  /* ── SECTIONS ── */
-  section { padding: 6rem 4rem; }
-  .section-header { margin-bottom: 4rem; }
-  .section-index {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.75rem;
-  }
-  h2 {
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    font-weight: 300;
-    line-height: 1.1;
-  }
-  .divider { width: 100%; height: 1px; background: var(--line); margin: 0 4rem; width: calc(100% - 8rem); }
-
-  /* ── EXPERIENCE ── */
+  /* EXPERIENCE & PROJECTS */
   #experience { background: var(--bg); }
-  .exp-item {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 3rem;
-    padding: 3rem 0;
-    border-top: 1px solid var(--line);
-    animation: fadeUp 0.7s ease both;
-  }
-  .exp-meta {}
-  .exp-period {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    margin-bottom: 0.5rem;
-  }
-  .exp-company {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 0.25rem;
-  }
-  .exp-location {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--muted);
-  }
-  .exp-content {}
-  .exp-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 400;
-    margin-bottom: 1.25rem;
-    color: var(--ink);
-  }
-  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
-  .exp-bullets li {
-    font-size: 0.9rem;
-    color: var(--muted);
-    padding-left: 1.25rem;
-    position: relative;
-    line-height: 1.65;
-  }
-  .exp-bullets li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 0.8rem;
-  }
+  #projects { background: var(--bg); }
+  .exp-item { display: grid; grid-template-columns: 200px 1fr; gap: 2.5rem; padding: 2rem 0; border-top: 1px solid var(--line); }
+  .exp-period { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.4rem; }
+  .exp-company { font-size: 0.85rem; font-weight: 500; color: var(--ink); margin-bottom: 0.2rem; }
+  .exp-location { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--muted); }
+  .exp-title { font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem; color: var(--ink); }
+  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .exp-bullets li { font-size: 0.88rem; color: var(--muted); padding-left: 1.2rem; position: relative; line-height: 1.6; }
+  .exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; }
 
-  /* ── SKILLS ── */
+  /* SKILLS */
   #skills { background: var(--ink); color: var(--bg); }
   #skills .section-index { color: var(--accent); }
   #skills h2 { color: var(--bg); }
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.08);
-    margin-top: 3rem;
-  }
-  .skill-group {
-    background: var(--ink);
-    padding: 2rem;
-    transition: background 0.2s;
-  }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); margin-top: 2rem; }
+  .skill-group { background: var(--ink); padding: 1.75rem; transition: background 0.2s; }
   .skill-group:hover { background: #22201C; }
-  .skill-group-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1.25rem;
-  }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .skill-tag {
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.65);
-    padding: 0.3rem 0.8rem;
-    border: 1px solid rgba(255,255,255,0.12);
-    transition: border-color 0.2s, color 0.2s;
-  }
+  .skill-group-title { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .skill-tag { font-size: 0.8rem; color: rgba(255,255,255,0.62); padding: 0.25rem 0.7rem; border: 1px solid rgba(255,255,255,0.1); transition: border-color 0.2s, color 0.2s; }
   .skill-tag:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* ── CERTIFICATIONS ── */
+  /* CERTIFICATIONS */
   #certifications { background: var(--accent-light); }
-  .certs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
-  }
-  .cert-card {
-    background: var(--card);
-    padding: 2rem;
-    border: 1px solid var(--line);
-    display: flex; flex-direction: column; gap: 0.75rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .cert-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.07); }
-  .cert-icon {
-    width: 36px; height: 36px;
-    background: var(--accent);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    color: white;
-    letter-spacing: 0.05em;
-  }
-  .cert-name {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--ink);
-    line-height: 1.4;
-  }
-  .cert-issuer {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    text-transform: uppercase;
-  }
+  .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-top: 0.5rem; }
+  .cert-card { background: var(--card); padding: 1.5rem; border: 1px solid var(--line); display: flex; flex-direction: column; gap: 0.6rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .cert-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
+  .cert-icon { width: 32px; height: 32px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: white; }
+  .cert-name { font-size: 0.9rem; font-weight: 500; color: var(--ink); line-height: 1.4; }
+  .cert-issuer { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
 
-  /* ── EDUCATION ── */
+  /* EDUCATION */
   #education { background: var(--bg); }
-  .edu-card {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 2.5rem;
-    align-items: start;
-    padding: 2.5rem;
-    background: var(--card);
-    border: 1px solid var(--line);
-    max-width: 640px;
-  }
-  .edu-year {
-    font-family: 'Inter', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 300;
-    color: var(--accent);
-    line-height: 1;
-    opacity: 0.5;
-  }
-  .edu-degree {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 0.5rem;
-  }
-  .edu-uni {
-    font-size: 0.9rem;
-    color: var(--muted);
-    margin-bottom: 0.25rem;
-  }
-  .edu-period {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    color: var(--accent);
-  }
+  .edu-card { display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: start; padding: 2rem; background: var(--card); border: 1px solid var(--line); max-width: 560px; }
+  .edu-year { font-family: 'Inter', sans-serif; font-size: 2.5rem; font-weight: 300; color: var(--accent); line-height: 1; opacity: 0.5; }
+  .edu-degree { font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 500; margin-bottom: 0.4rem; }
+  .edu-uni { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.2rem; }
+  .edu-period { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; color: var(--accent); }
 
-  /* ── CONTACT ── */
-  #contact {
-    background: var(--ink);
-    color: var(--bg);
-    text-align: center;
-    padding: 7rem 4rem;
-  }
+  /* CONTACT */
+  #contact { background: var(--ink); color: var(--bg); text-align: center; padding: 4rem 4rem; }
   #contact .section-index { color: var(--accent); }
-  #contact h2 { color: var(--bg); margin-bottom: 1.25rem; }
-  #contact p {
-    color: rgba(255,255,255,0.5);
-    font-size: 1rem;
-    max-width: 44ch;
-    margin: 0 auto 3rem;
-    line-height: 1.75;
-  }
-  .contact-links {
-    display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 3rem;
-  }
-  .contact-link {
-    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-    text-decoration: none;
-    transition: opacity 0.2s;
-  }
+  #contact h2 { color: var(--bg); margin-bottom: 1rem; }
+  #contact p { color: rgba(255,255,255,0.5); font-size: 0.95rem; max-width: 44ch; margin: 0 auto 2.5rem; line-height: 1.7; }
+  .contact-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .contact-link { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; text-decoration: none; transition: opacity 0.2s; }
   .contact-link:hover { opacity: 0.7; }
-  .contact-link-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
-  .contact-link-val {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.75);
-  }
-  .footer-line {
-    padding-top: 3rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    color: rgba(255,255,255,0.25);
-  }
+  .contact-link-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+  .contact-link-val { font-size: 0.88rem; color: rgba(255,255,255,0.75); }
+  .footer-line { padding-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.08); font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.25); }
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* ── HAMBURGER / MOBILE ── */
-  .hamburger {
-    display: none;
-    flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px;
-  }
-  .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--ink); transition: 0.3s; }
+  /* HAMBURGER */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: 0.3s; }
   .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-  .mobile-menu {
-    display: none; position: fixed; inset: 0; z-index: 90;
-    background: var(--bg); flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem;
-  }
+  .mobile-menu { display: none; position: fixed; inset: 0; z-index: 90; background: var(--bg); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
   .mobile-menu.open { display: flex; }
-  .mobile-menu a {
-    font-family: 'Inter', sans-serif;
-    font-size: 2rem; font-weight: 300; color: var(--ink); text-decoration: none;
-    letter-spacing: 0.04em;
-  }
+  .mobile-menu a { font-family: 'Inter', sans-serif; font-size: 1.6rem; font-weight: 300; color: var(--ink); text-decoration: none; }
   .mobile-menu a:hover { color: var(--accent); }
 
-  /* ── RESPONSIVE ── */
+  /* RESPONSIVE */
   @media (max-width: 900px) {
-    nav { padding: 1.2rem 1.75rem; }
+    nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
-    #hero { grid-template-columns: 1fr; padding: 6rem 1.75rem 4rem; gap: 3rem; min-height: auto; }
-    section { padding: 5rem 1.75rem; }
-    .divider { margin: 0 1.75rem; width: calc(100% - 3.5rem); }
-    .exp-item { grid-template-columns: 1fr; gap: 1rem; }
+    #hero { grid-template-columns: 1fr; padding: 5rem 1.5rem 2.5rem; gap: 2.5rem; }
+    section { padding: 2.5rem 1.5rem; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.75rem; }
     .edu-card { grid-template-columns: 1fr; gap: 1rem; }
-    .edu-year { font-size: 2.5rem; }
-    #contact { padding: 5rem 1.75rem; }
-    .contact-links { flex-direction: column; align-items: center; gap: 1.75rem; }
+    #contact { padding: 3rem 1.5rem; }
+    .contact-links { flex-direction: column; align-items: center; gap: 1.5rem; }
+    .divider { margin: 0; }
   }
-
   @media (max-width: 480px) {
-    h1 { font-size: 2.8rem; }
-    .stat-grid { grid-template-columns: 1fr 1fr; }
+    h1 { font-size: 2.4rem; }
     .stat-num { font-size: 2rem; }
     .certs-grid { grid-template-columns: 1fr; }
   }
@@ -465,13 +145,13 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#hero" class="nav-logo">TK.</a>
   <ul class="nav-links">
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#certifications">Certs</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -480,11 +160,11 @@
   </button>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#experience" class="mm-link">Experience</a>
   <a href="#skills" class="mm-link">Skills</a>
   <a href="#certifications" class="mm-link">Certifications</a>
+  <a href="#projects" class="mm-link">Projects</a>
   <a href="#education" class="mm-link">Education</a>
   <a href="#contact" class="mm-link">Contact</a>
 </div>
@@ -494,7 +174,14 @@
   <div class="hero-left">
     <div class="hero-tag">Salesforce Marketing Cloud Developer</div>
     <h1>Tushar<br><em>Kumar</em></h1>
-    <p class="hero-desc">Senior Manager – Campaign with 4+ years driving data-driven marketing through Salesforce Marketing Cloud, Journey Builder, AMPscript, and automation at scale.</p>
+    <p class="hero-desc">Marketing Technology Consultant with 4+ years of hands-on experience in Salesforce Marketing Cloud,
+      Pardot (MCAE) and Salesforce Data Cloud, specializing in designing, developing, and launching multi-channel 
+      digital marketing solutions. Skilled in Email Studio, Journey Builder, Automation Studio, CloudPages, 
+      AMPscript, SQL, MC APIs. Experienced in collaborating directly with clients to gather requirements, 
+      architect solutions, and ensure timely, high-quality delivery. Adept at building data-driven marketing journeys, 
+      optimizing campaign performance, and improving operational processes. Recognized as a strong team player with 
+      experience mentoring juniors and contributing to scalable, efficient MarTech implementations that drive measurable 
+      business growth.</p>
     <div class="hero-ctas">
       <a href="#experience" class="btn-primary">View Work</a>
       <a href="#contact" class="btn-outline">Get in Touch</a>
@@ -502,22 +189,10 @@
   </div>
   <div class="hero-right">
     <div class="stat-grid">
-      <div class="stat-item">
-        <div class="stat-num">4+</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Certifications</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">2</div>
-        <div class="stat-label">Companies</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">∞</div>
-        <div class="stat-label">Campaigns Delivered</div>
-      </div>
+      <div class="stat-item"><div class="stat-num">4+</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Certifications</div></div>
+      <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">Companies</div></div>
+      <div class="stat-item"><div class="stat-num">10+</div><div class="stat-label">Projects</div></div>
     </div>
     <div class="cert-strip">
       <div class="cert-strip-label">Salesforce Certifications</div>
@@ -535,31 +210,29 @@
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-header reveal">
-    <div class="section-index">01 — Experience</div>
-    <h2>Where I've<br>Made Impact</h2>
+    <div class="section-index">01 - Experience</div>
+    <h2>Where I've Made Impact</h2>
   </div>
-
   <div class="exp-item reveal">
     <div class="exp-meta">
-      <div class="exp-period">July 2024 — Present</div>
+      <div class="exp-period">July 2024 - Present</div>
       <div class="exp-company">Dentsu</div>
       <div class="exp-location">Pune, India</div>
     </div>
     <div class="exp-content">
-      <div class="exp-title">Senior Manager – Campaign</div>
+      <div class="exp-title">Senior Manager - Campaign</div>
       <ul class="exp-bullets">
         <li>Led daily Scrum meetings with clients and internal teams, aligning on goals, timelines, and deliverables.</li>
         <li>Built end-to-end automation workflows using Journey Builder and Automation Studio (SQL, Import, Filter, File Transfer, Data Extract).</li>
         <li>Designed CloudPages for product feedback collection and personalized content delivery with downloadable PDF functionality.</li>
         <li>Launched personalized email campaigns using Email Studio and AMPscript with dynamic content for enhanced engagement.</li>
         <li>Executed advanced segmentation based on location, preferences, and behavioral data for ad hoc and daily campaigns.</li>
-        <li>Managed Transactional Messaging REST API — Send Definitions, Journey tracking, and email delivery status.</li>
+        <li>Managed Transactional Messaging REST API Send Definitions, Journey tracking, and email delivery status.</li>
         <li>Delivered Monthly Business Review (MBR) reports highlighting campaign performance and strategic growth opportunities.</li>
         <li>Mentored junior team members, fostering skill development and career growth across the team.</li>
       </ul>
     </div>
   </div>
-
   <div class="exp-item reveal">
     <div class="exp-meta">
       <div class="exp-period">Sept 2021 — June 2024</div>
@@ -569,14 +242,13 @@
     <div class="exp-content">
       <div class="exp-title">Senior Salesforce Developer</div>
       <ul class="exp-bullets">
-        <li>Engineered API integrations to embed website forms directly into SFMC and trigger automated journeys — no intermediary CloudPages needed.</li>
+        <li>Engineered API integrations to embed website forms directly into SFMC and trigger automated journeys without intermediary CloudPages.</li>
         <li>Built a centralized preference center enabling users to manage communication preferences efficiently.</li>
         <li>Developed dynamic CloudPages using SSJS for advanced use cases including image uploads and personalized content delivery.</li>
         <li>Managed high-volume deadline-driven campaigns using Content Builder, Email Studio, Query Studio, and Automation Studio.</li>
         <li>Created Pardot campaigns with responsive templates, Engagement Studio automation, and lead scoring for improved conversions.</li>
         <li>Implemented lead capture strategies and integrated partner-generated leads into Pardot with analytics tracking.</li>
         <li>Demonstrated expertise across Flow Builder, Formula Fields, Object Relationships, Reports, and Salesforce admin tasks.</li>
-        <li>Tracked tasks and issues via JIRA to ensure timely resolution and efficient project execution.</li>
       </ul>
     </div>
   </div>
@@ -587,8 +259,8 @@
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-header reveal">
-    <div class="section-index">02 — Skills</div>
-    <h2>Technical<br>Expertise</h2>
+    <div class="section-index">02 - Skills</div>
+    <h2>Technical Expertise</h2>
   </div>
   <div class="skills-grid">
     <div class="skill-group reveal">
@@ -633,7 +305,6 @@
         <span class="skill-tag">Segmentation</span>
         <span class="skill-tag">Email on Acid</span>
         <span class="skill-tag">MBR Reporting</span>
-        <span class="skill-tag">JIRA</span>
         <span class="skill-tag">FTP / SFTP</span>
       </div>
     </div>
@@ -655,19 +326,20 @@
         <span class="skill-tag">Transactional Messaging API</span>
         <span class="skill-tag">Data Imports/Exports</span>
         <span class="skill-tag">Preference Center</span>
+        <span class="skill-tag">MuleSoft</span>
         <span class="skill-tag">Lead Scoring</span>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider" style="background:rgba(255,255,255,0.06); margin:0 4rem; width:calc(100% - 8rem);"></div>
+<div class="divider"></div>
 
 <!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="section-header reveal">
-    <div class="section-index">03 — Certifications</div>
-    <h2>Salesforce<br>Credentials</h2>
+    <div class="section-index">03 - Certifications</div>
+    <h2>Salesforce Credentials</h2>
   </div>
   <div class="certs-grid">
     <div class="cert-card reveal">
@@ -685,7 +357,98 @@
       <div class="cert-name">Data Cloud Consultant</div>
       <div class="cert-issuer">Salesforce</div>
     </div>
+  </div>
+</section>
 
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header reveal">
+    <div class="section-index">04 - Projects</div>
+    <h2>Selected Projects</h2>
+    <p style="margin-top:0.75rem; font-size:0.88rem; color:var(--muted); max-width:60ch;">A selection of major client engagements. These represent key highlights the full body of work spans many more projects across industries.</p>
+  </div>
+  <div class="exp-item reveal">
+    <div class="exp-meta">
+      <div class="exp-company">Project 1</div>
+      <div class="exp-period">Automotive Industry</div>
+    </div>
+    <div class="exp-content">
+      <div class="exp-title">Multi-Channel Automotive CRM & Campaign Platform</div>
+      <ul class="exp-bullets">
+        <li>Managed end-to-end email, SMS, and WhatsApp campaigns across automotive customer lifecycle stages bookings, test drives, service reminders, post-purchase, and lead nurturing.</li>
+        <li>Designed Journey Builder workflows and advanced AMPscript for personalization, conditional content, tracking, and real-time data lookups.</li>
+        <li>Built responsive HTML email templates, modular content blocks, and CloudPages for bookings, surveys, lead capture, and preference centers.</li>
+        <li>Set up API-triggered sends via REST and SOAP APIs for booking confirmations, payment updates, and lead alerts.</li>
+        <li>Configured SPF, DKIM, and DMARC on delegated domains; handled IP warming, deliverability improvements, and domain health monitoring.</li>
+        <li>Managed large-scale datasets ensuring compliance with auto-industry data governance, consent management, and opt-in regulations.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp-item reveal">
+    <div class="exp-meta">
+      <div class="exp-company">Project 2</div>
+      <div class="exp-period">Biopharmaceutical / Life Sciences</div>
+    </div>
+    <div class="exp-content">
+      <div class="exp-title">Salesforce Data Cloud & SFMC Implementation</div>
+      <ul class="exp-bullets">
+        <li>Led data migration into Salesforce; set up Business Units, user roles, and access controls across Data Cloud and SFMC.</li>
+        <li>Integrated multiple data sources via APIs Salesforce, FTP, CloudPages, and third-party systems for consistent data ingestion.</li>
+        <li>Built relational data models using Data Extensions, Attribute Groups, and Lists for a unified 360° customer view.</li>
+        <li>Activated Data Cloud audiences into SFMC for personalized campaigns across email, mobile, and web channels.</li>
+        <li>Orchestrated multi-channel journeys using Journey Builder with Data Cloud profiles, behavioural triggers, and API events.</li>
+        <li>Created Calculated Insights for business metrics; implemented IP Warming for improved deliverability and compliance.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp-item reveal">
+    <div class="exp-meta">
+      <div class="exp-company">Project 3</div>
+      <div class="exp-period">Quartz Countertops & Surfaces</div>
+    </div>
+    <div class="exp-content">
+      <div class="exp-title">Pardot (MCAE) Operations</div>
+      <ul class="exp-bullets">
+        <li>Managed Cambria's Pardot setup including automation rules, completion actions, custom redirects, and Engagement Studio programs.</li>
+        <li>Built email templates, landing pages, and forms for sample requests, showroom visits, and lead capture aligned to brand guidelines.</li>
+        <li>Configured Pardot–Salesforce sync with field mapping, lead assignment rules, scoring, and grading.</li>
+        <li>Used dynamic lists and automation rules to target homeowners, dealers, fabricators, designers, and commercial partners.</li>
+        <li>Built Pardot reports and Salesforce dashboards to track sample requests, engagement rates, and campaign impact.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp-item reveal">
+    <div class="exp-meta">
+      <div class="exp-company">Project 4</div>
+      <div class="exp-period">Clothing & Home Goods</div>
+    </div>
+    <div class="exp-content">
+      <div class="exp-title">SFMC Implementation & Campaign Operations</div>
+      <ul class="exp-bullets">
+        <li>Built responsive HTML emails with personalization, dynamic content, Smart Capture forms, and CloudPages in Email Studio.</li>
+        <li>Automated business processes in Automation Studio and created end-to-end Journey Builder journeys; managed Data Extensions in Contact Builder.</li>
+        <li>Supported full SFMC implementation setup, configuration, data migration, and Marketing Cloud Connect CRM sync.</li>
+        <li>Used Email Studio reports, data extracts, and SQL to analyse engagement metrics using Data Views and Analytics Builder.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exp-item reveal">
+    <div class="exp-meta">
+      <div class="exp-company">Project 5</div>
+      <div class="exp-period">Advertising & Billboard</div>
+    </div>
+    <div class="exp-content">
+      <div class="exp-title">Salesforce CRM + SFMC + Data Cloud Integration</div>
+      <ul class="exp-bullets">
+        <li>Set up a Salesforce CRM org from scratch custom objects, fields, flows, profiles, permission sets, and validation rules.</li>
+        <li>Integrated Salesforce CRM with SFMC via Marketing Cloud Connect for real-time data synchronization and automation.</li>
+        <li>Built personalized Email, SMS, and Push content leveraging Data Cloud segments and advanced SFMC capabilities.</li>
+        <li>Managed SSL, DNS, SPF/DKIM/DMARC; defined segmentation strategies and executed A/B testing with custom Data Extensions.</li>
+        <li>Used Postman to test triggered campaigns, validate API-based subscriber data, and monitor API performance.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -694,8 +457,8 @@
 <!-- EDUCATION -->
 <section id="education">
   <div class="section-header reveal">
-    <div class="section-index">04 — Education</div>
-    <h2>Academic<br>Background</h2>
+    <div class="section-index">05 — Education</div>
+    <h2>Academic Background</h2>
   </div>
   <div class="edu-card reveal">
     <div class="edu-year">BCA</div>
@@ -711,8 +474,8 @@
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="section-index reveal">05 — Contact</div>
-  <h2 class="reveal">Let's Build<br><em style="font-style:italic; color:var(--accent)">Something.</em></h2>
+  <div class="section-index reveal">06 — Contact</div>
+  <h2 class="reveal">Let's Build <em style="font-style:italic; color:var(--accent)">Something.</em></h2>
   <p class="reveal">Open to new challenges, consulting opportunities, and conversations about marketing automation at scale.</p>
   <div class="contact-links reveal">
     <a href="mailto:tushar.kumar1107@gmail.com" class="contact-link">
@@ -757,11 +520,11 @@
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08 });
   reveals.forEach(el => observer.observe(el));
 </script>
 </body>
