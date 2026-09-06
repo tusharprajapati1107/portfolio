@@ -3,529 +3,494 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tushar Kumar - SFMC Developer</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Tushar Kumar — SFMC Consultant</title>
 <style>
-  :root {
-    --bg: #F7F5F0;
-    --ink: #1A1814;
-    --muted: #8A8680;
-    --accent: #C8602A;
-    --accent-light: #F0DDD3;
-    --line: #E0DDD8;
-    --card: #FFFFFF;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
-  /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 4rem; background: rgba(247,245,240,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
-  .nav-logo { font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: var(--ink); text-decoration: none; }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--ink); }
+:root{
+  --ink:#0D1B1E;
+  --paper:#F3EFE6;
+  --panel:#12262B;
+  --panel-2:#173238;
+  --signal:#F2994A;
+  --data:#7FD4C1;
+  --muted:#9BB0AE;
+  --line: rgba(243,239,230,0.14);
+  --maxw: 920px;
+}
 
-  /* HERO */
-  #hero { display: grid; grid-template-columns: 1fr 1fr; align-items: start; padding: 6rem 4rem 3rem; gap: 4rem; }
-  .hero-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.75rem; }
-  .hero-tag::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--accent); }
-  h1 { font-family: 'Inter', sans-serif; font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 300; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 1.2rem; }
-  h1 em { font-style: italic; color: var(--accent); }
-  .hero-desc { font-size: 0.95rem; color: var(--muted); max-width: 44ch; line-height: 1.7; margin-bottom: 2rem; }
-  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary { padding: 0.75rem 1.75rem; background: var(--ink); color: var(--bg); font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--ink); transition: background 0.2s; }
-  .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
-  .btn-outline { padding: 0.75rem 1.75rem; background: transparent; color: var(--ink); font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--line); transition: border-color 0.2s; }
-  .btn-outline:hover { border-color: var(--ink); }
-  .hero-right { display: flex; flex-direction: column; gap: 1.25rem; }
-  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
-  .stat-item { background: var(--bg); padding: 1.5rem; }
-  .stat-num { font-family: 'Inter', sans-serif; font-size: 2.4rem; font-weight: 300; color: var(--accent); line-height: 1; margin-bottom: 0.3rem; }
-  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
-  .cert-strip { padding: 1rem 1.5rem; background: var(--ink); }
-  .cert-strip-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; }
-  .cert-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .cert-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; padding: 0.25rem 0.6rem; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.72); }
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--paper);
+  font-family:'IBM Plex Sans', sans-serif;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+  font-family:'Fraunces', serif;
+  font-weight:500;
+  margin:0;
+  letter-spacing:-0.01em;
+}
+a{color:inherit;}
+::selection{background:var(--signal); color:var(--ink);}
 
-  /* SECTIONS */
-  section { padding: 3rem 4rem; }
-  .section-header { margin-bottom: 2.5rem; }
-  .section-index { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
-  h2 { font-family: 'Inter', sans-serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300; line-height: 1.1; }
-  .divider { height: 1px; background: var(--line); }
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important; transition:none !important;}
+}
 
-  /* EXPERIENCE & PROJECTS */
-  #experience { background: var(--bg); }
-  #projects { background: var(--bg); }
-  .exp-item { display: grid; grid-template-columns: 200px 1fr; gap: 2.5rem; padding: 2rem 0; border-top: 1px solid var(--line); }
-  .exp-period { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.4rem; }
-  .exp-company { font-size: 0.85rem; font-weight: 500; color: var(--ink); margin-bottom: 0.2rem; }
-  .exp-location { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--muted); }
-  .exp-title { font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem; color: var(--ink); }
-  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-  .exp-bullets li { font-size: 0.88rem; color: var(--muted); padding-left: 1.2rem; position: relative; line-height: 1.6; }
-  .exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; }
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
 
-  /* SKILLS */
-  #skills { background: var(--ink); color: var(--bg); }
-  #skills .section-index { color: var(--accent); }
-  #skills h2 { color: var(--bg); }
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); margin-top: 2rem; }
-  .skill-group { background: var(--ink); padding: 1.75rem; transition: background 0.2s; }
-  .skill-group:hover { background: #22201C; }
-  .skill-group-title { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .skill-tag { font-size: 0.8rem; color: rgba(255,255,255,0.62); padding: 0.25rem 0.7rem; border: 1px solid rgba(255,255,255,0.1); transition: border-color 0.2s, color 0.2s; }
-  .skill-tag:hover { border-color: var(--accent); color: var(--accent); }
+/* NAV */
+.nav{
+  position:sticky; top:0; z-index:20;
+  background:rgba(13,27,30,0.86);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav .wrap{
+  display:flex; align-items:center; justify-content:space-between;
+  padding-top:16px; padding-bottom:16px;
+}
+.nav .mark{
+  font-family:'Fraunces', serif; font-size:19px; font-weight:600;
+}
+.nav .mark span{color:var(--signal);}
+.nav ul{
+  list-style:none; display:flex; gap:26px; margin:0; padding:0;
+  font-size:14px; color:var(--muted);
+}
+.nav ul a{text-decoration:none; transition:color .2s ease;}
+.nav ul a:hover{color:var(--paper);}
+.nav-toggle{display:none;}
 
-  /* CERTIFICATIONS */
-  #certifications { background: var(--accent-light); }
-  .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-top: 0.5rem; }
-  .cert-card { background: var(--card); padding: 1.5rem; border: 1px solid var(--line); display: flex; flex-direction: column; gap: 0.6rem; transition: transform 0.2s, box-shadow 0.2s; }
-  .cert-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
-  .cert-icon { width: 32px; height: 32px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: white; }
-  .cert-name { font-size: 0.9rem; font-weight: 500; color: var(--ink); line-height: 1.4; }
-  .cert-issuer { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
+/* HERO */
+.hero{
+  padding:96px 0 72px;
+  border-bottom:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+}
+.hero .kicker{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:13px;
+  color:var(--data);
+  margin-bottom:22px;
+}
+.hero h1{
+  font-size:clamp(38px, 6vw, 64px);
+  line-height:1.06;
+  max-width:11ch;
+}
+.hero h1 em{
+  font-style:italic; color:var(--data);
+}
+.hero .lede{
+  margin-top:26px;
+  max-width:52ch;
+  font-size:18px;
+  color:#D8D2C4;
+}
+.hero .role{
+  margin-top:34px;
+  font-size:15px;
+  color:var(--muted);
+}
+.hero .role strong{color:var(--paper); font-weight:500;}
 
-  /* EDUCATION */
-  #education { background: var(--bg); }
-  .edu-card { display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: start; padding: 2rem; background: var(--card); border: 1px solid var(--line); max-width: 560px; }
-  .edu-year { font-family: 'Inter', sans-serif; font-size: 2.5rem; font-weight: 300; color: var(--accent); line-height: 1; opacity: 0.5; }
-  .edu-degree { font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 500; margin-bottom: 0.4rem; }
-  .edu-uni { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.2rem; }
-  .edu-period { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; color: var(--accent); }
+.journey{
+  margin-top:64px;
+  height:150px;
+}
+.journey svg{width:100%; height:100%; display:block;}
+.journey circle{fill:var(--panel-2); stroke:var(--data); stroke-width:1.4;}
+.journey .node-label{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  fill:var(--muted);
+}
+.journey .flow-line{
+  fill:none; stroke:var(--data); stroke-width:1.4; stroke-dasharray:6 5;
+  stroke-dashoffset:0;
+  animation:dash 14s linear infinite;
+  opacity:0.75;
+}
+@keyframes dash{to{stroke-dashoffset:-220;}}
 
-  /* CONTACT */
-  #contact { background: var(--ink); color: var(--bg); text-align: center; padding: 4rem 4rem; }
-  #contact .section-index { color: var(--accent); }
-  #contact h2 { color: var(--bg); margin-bottom: 1rem; }
-  #contact p { color: rgba(255,255,255,0.5); font-size: 0.95rem; max-width: 44ch; margin: 0 auto 2.5rem; line-height: 1.7; }
-  .contact-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
-  .contact-link { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; text-decoration: none; transition: opacity 0.2s; }
-  .contact-link:hover { opacity: 0.7; }
-  .contact-link-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
-  .contact-link-val { font-size: 0.88rem; color: rgba(255,255,255,0.75); }
-  .footer-line { padding-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.08); font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.25); }
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1px;
+  background:var(--line);
+  margin-top:60px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.stats div{
+  background:var(--ink);
+  padding:26px 6px;
+  text-align:left;
+}
+.stats .num{
+  font-family:'Fraunces', serif;
+  font-size:34px;
+  color:var(--signal);
+}
+.stats .label{
+  font-size:13px; color:var(--muted); margin-top:6px;
+}
 
-  /* SCROLL REVEAL */
-  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+/* SECTION generic */
+section{padding:76px 0; border-bottom:1px solid var(--line);}
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:13px;
+  color:var(--data);
+  margin-bottom:16px;
+}
+.section-head{
+  display:flex; align-items:flex-end; justify-content:space-between; gap:24px;
+  margin-bottom:44px; flex-wrap:wrap;
+}
+.section-head h2{font-size:clamp(26px,3.4vw,36px); max-width:16ch;}
 
-  /* HAMBURGER */
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-  .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: 0.3s; }
-  .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-  .mobile-menu { display: none; position: fixed; inset: 0; z-index: 90; background: var(--bg); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a { font-family: 'Inter', sans-serif; font-size: 1.6rem; font-weight: 300; color: var(--ink); text-decoration: none; }
-  .mobile-menu a:hover { color: var(--accent); }
+/* ABOUT */
+.about-grid{display:grid; grid-template-columns: 1.4fr 1fr; gap:56px;}
+.about-grid p{color:#D8D2C4; font-size:16px; max-width:58ch;}
+.about-grid p + p{margin-top:16px;}
+.focus-list{
+  border-top:1px solid var(--line);
+}
+.focus-list div{
+  display:flex; justify-content:space-between; gap:16px;
+  padding:14px 0; border-bottom:1px solid var(--line);
+  font-size:14px;
+}
+.focus-list span:first-child{color:var(--muted);}
 
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
-    #hero { grid-template-columns: 1fr; padding: 5rem 1.5rem 2.5rem; gap: 2.5rem; }
-    section { padding: 2.5rem 1.5rem; }
-    .exp-item { grid-template-columns: 1fr; gap: 0.75rem; }
-    .edu-card { grid-template-columns: 1fr; gap: 1rem; }
-    #contact { padding: 3rem 1.5rem; }
-    .contact-links { flex-direction: column; align-items: center; gap: 1.5rem; }
-    .divider { margin: 0; }
-  }
-  @media (max-width: 480px) {
-    h1 { font-size: 2.4rem; }
-    .stat-num { font-size: 2rem; }
-    .certs-grid { grid-template-columns: 1fr; }
-  }
+@media (max-width:760px){
+  .about-grid{grid-template-columns:1fr;}
+}
+
+/* EXPERIENCE */
+.role-block{padding:34px 0; border-top:1px solid var(--line);}
+.role-block:last-child{border-bottom:none;}
+.role-top{
+  display:flex; justify-content:space-between; align-items:baseline;
+  gap:18px; flex-wrap:wrap;
+}
+.role-top h3{font-size:22px;}
+.role-top .period{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12.5px; color:var(--signal); white-space:nowrap;
+}
+.role-org{color:var(--data); font-size:14px; margin-top:4px;}
+.role-desc{margin-top:16px; color:#D8D2C4; font-size:15px; max-width:66ch;}
+.role-points{
+  margin-top:16px; padding:0; list-style:none;
+  display:grid; gap:9px;
+}
+.role-points li{
+  font-size:14.5px; color:#C7C1B4; padding-left:18px; position:relative;
+}
+.role-points li::before{
+  content:''; position:absolute; left:0; top:8px;
+  width:6px; height:6px; border-radius:50%; background:var(--data);
+}
+.role-toggle{
+  margin-top:16px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12.5px;
+  color:var(--muted);
+  background:none; border:1px solid var(--line);
+  padding:8px 14px; border-radius:2px; cursor:pointer;
+}
+.role-toggle:hover{border-color:var(--data); color:var(--data);}
+.role-points.hidden{display:none;}
+
+/* SKILLS */
+.skill-groups{display:grid; grid-template-columns:repeat(2,1fr); gap:36px;}
+.skill-groups h4{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12.5px; color:var(--muted); font-weight:400;
+  margin-bottom:14px;
+}
+.tag-row{display:flex; flex-wrap:wrap; gap:9px;}
+.tag{
+  border:1px solid var(--line); padding:7px 13px;
+  font-size:13.5px; border-radius:2px; color:#D8D2C4;
+}
+@media (max-width:760px){.skill-groups{grid-template-columns:1fr;}}
+
+/* CERTS */
+.cert-list{display:grid; gap:1px; background:var(--line); border:1px solid var(--line);}
+.cert-list div{
+  background:var(--ink); padding:22px 24px;
+  display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;
+}
+.cert-list .cname{font-family:'Fraunces', serif; font-size:18px;}
+.cert-list .cbody{color:var(--muted); font-size:13.5px;}
+
+/* EDUCATION */
+.edu-row{display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-top:1px solid var(--line); flex-wrap:wrap;}
+.edu-row:last-child{border-bottom:1px solid var(--line);}
+.edu-row .school{font-size:15px;}
+.edu-row .yrs{font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--muted);}
+
+/* CONTACT / FOOTER */
+.contact{
+  padding:88px 0 60px; border-bottom:none;
+}
+.contact h2{
+  font-size:clamp(32px,5vw,52px); max-width:14ch;
+}
+.contact .lede{color:#D8D2C4; margin-top:18px; max-width:48ch; font-size:16px;}
+.contact-links{
+  margin-top:44px;
+  display:flex; flex-wrap:wrap; gap:14px 30px;
+}
+.contact-links a{
+  text-decoration:none;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:14px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:2px;
+  transition:border-color .2s ease, color .2s ease;
+}
+.contact-links a:hover{color:var(--data); border-color:var(--data);}
+
+footer{
+  padding:26px 0 40px;
+  font-size:12.5px; color:var(--muted);
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+}
+
+@media (max-width:600px){
+  .nav ul{gap:16px; font-size:12.5px;}
+  .stats{grid-template-columns:1fr;}
+  .stats div{border-bottom:1px solid var(--line);}
+}
 </style>
 </head>
 <body>
 
-<nav>
-  <a href="#hero" class="nav-logo">TK.</a>
-  <ul class="nav-links">
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#certifications">Certs</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+<nav class="nav">
+  <div class="wrap">
+    <div class="mark">Tushar<span>*</span></div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 </nav>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#experience" class="mm-link">Experience</a>
-  <a href="#skills" class="mm-link">Skills</a>
-  <a href="#certifications" class="mm-link">Certifications</a>
-  <a href="#projects" class="mm-link">Projects</a>
-  <a href="#education" class="mm-link">Education</a>
-  <a href="#contact" class="mm-link">Contact</a>
-</div>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Pune, Maharashtra, India</div>
+    <h1>I turn customer data into journeys people actually respond to.</h1>
+    <p class="lede">Salesforce Marketing Cloud consultant with 5 years building multichannel automation across email, mobile and web for enterprise clients.</p>
+    <div class="role">Currently <strong>Senior Manager, Campaign</strong> at Dentsu</div>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-left">
-    <div class="hero-tag">Salesforce Marketing Cloud Developer</div>
-    <h1>Tushar<br><em>Kumar</em></h1>
-    <p class="hero-desc">Marketing Technology Consultant with 4+ years of hands-on experience in Salesforce Marketing Cloud,
-      Pardot (MCAE) and Salesforce Data Cloud, specializing in designing, developing, and launching multi-channel 
-      digital marketing solutions. Skilled in Email Studio, Journey Builder, Automation Studio, CloudPages, 
-      AMPscript, SQL, MC APIs. Experienced in collaborating directly with clients to gather requirements, 
-      architect solutions, and ensure timely, high-quality delivery. Adept at building data-driven marketing journeys, 
-      optimizing campaign performance, and improving operational processes. Recognized as a strong team player with 
-      experience mentoring juniors and contributing to scalable, efficient MarTech implementations that drive measurable 
-      business growth.</p>
-    <div class="hero-ctas">
-      <a href="#experience" class="btn-primary">View Work</a>
-      <a href="#contact" class="btn-outline">Get in Touch</a>
+    <div class="journey">
+      <svg viewBox="0 0 800 150" preserveAspectRatio="xMidYMid meet">
+        <path class="flow-line" d="M40,110 C160,20 220,20 260,75 S360,140 420,75 S540,10 600,75 S700,130 760,60" />
+        <circle cx="40" cy="110" r="7"></circle>
+        <circle cx="260" cy="75" r="7"></circle>
+        <circle cx="420" cy="75" r="7"></circle>
+        <circle cx="600" cy="75" r="7"></circle>
+        <circle cx="760" cy="60" r="7"></circle>
+        <text class="node-label" x="20" y="132">Signup</text>
+        <text class="node-label" x="228" y="98">Segment</text>
+        <text class="node-label" x="390" y="98">Journey</text>
+        <text class="node-label" x="570" y="98">Send</text>
+        <text class="node-label" x="720" y="83">Convert</text>
+      </svg>
+    </div>
+
+    <div class="stats">
+      <div><div class="num">5</div><div class="label">Years in Salesforce Marketing Cloud</div></div>
+      <div><div class="num">3</div><div class="label">Active certifications</div></div>
+      <div><div class="num">2</div><div class="label">Agencies delivered enterprise programs for</div></div>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="stat-grid">
-      <div class="stat-item"><div class="stat-num">4+</div><div class="stat-label">Years Experience</div></div>
-      <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Certifications</div></div>
-      <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">Companies</div></div>
-      <div class="stat-item"><div class="stat-num">10+</div><div class="stat-label">Projects</div></div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">About</div>
+        <h2>Built for the parts of MarTech that break under scale.</h2>
+      </div>
     </div>
-    <div class="cert-strip">
-      <div class="cert-strip-label">Salesforce Certifications</div>
-      <div class="cert-badges">
-        <span class="cert-badge">Admin</span>
-        <span class="cert-badge">MC Email Specialist</span>
-        <span class="cert-badge">Data Cloud</span>
+    <div class="about-grid">
+      <div>
+        <p>I'm a Salesforce Marketing Cloud consultant and campaign manager with five years of hands-on experience across SFMC, Marketing Cloud Account Engagement (Pardot / MCAE) and Salesforce Data Cloud. I design, build and launch multichannel automation across email, mobile and web, and I'm comfortable going deep into AMPscript, SSJS, SQL and the Marketing Cloud REST and SOAP APIs when a use case needs it.</p>
+        <p>Most of my work sits at the intersection of client requirements and system architecture: gathering what a business actually needs, then shaping it into journeys, data extensions and integrations that hold up in production. I've also spent a good part of my career mentoring newer team members and presenting campaign performance directly to clients.</p>
+      </div>
+      <div class="focus-list">
+        <div><span>Platforms</span><span>SFMC, Pardot / MCAE, Data Cloud</span></div>
+        <div><span>Languages</span><span>AMPscript, SSJS, SQL</span></div>
+        <div><span>Integration</span><span>REST, SOAP, FTP/SFTP</span></div>
+        <div><span>Delivery</span><span>Agile / Scrum, client facing</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- EXPERIENCE -->
 <section id="experience">
-  <div class="section-header reveal">
-    <div class="section-index">01 - Experience</div>
-    <h2>Where I've Made Impact</h2>
-  </div>
-  <div class="exp-item reveal">
-    <div class="exp-meta">
-      <div class="exp-period">July 2024 - Present</div>
-      <div class="exp-company">Dentsu</div>
-      <div class="exp-location">Pune, India</div>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Experience</div>
+        <h2>Where the work has happened.</h2>
+      </div>
     </div>
-    <div class="exp-content">
-      <div class="exp-title">Senior Manager - Campaign</div>
-      <ul class="exp-bullets">
-        <li>Led daily Scrum meetings with clients and internal teams, aligning on goals, timelines, and deliverables.</li>
-        <li>Built end-to-end automation workflows using Journey Builder and Automation Studio (SQL, Import, Filter, File Transfer, Data Extract).</li>
-        <li>Designed CloudPages for product feedback collection and personalized content delivery with downloadable PDF functionality.</li>
-        <li>Launched personalized email campaigns using Email Studio and AMPscript with dynamic content for enhanced engagement.</li>
-        <li>Executed advanced segmentation based on location, preferences, and behavioral data for ad hoc and daily campaigns.</li>
-        <li>Managed Transactional Messaging REST API Send Definitions, Journey tracking, and email delivery status.</li>
-        <li>Delivered Monthly Business Review (MBR) reports highlighting campaign performance and strategic growth opportunities.</li>
-        <li>Mentored junior team members, fostering skill development and career growth across the team.</li>
+
+    <div class="role-block">
+      <div class="role-top">
+        <div>
+          <h3>Senior Manager, Campaign</h3>
+          <div class="role-org">Dentsu, Pune</div>
+        </div>
+        <div class="period">July 2024 — Present</div>
+      </div>
+      <p class="role-desc">Leading campaign delivery and client relationships, from daily scrum alignment through to monthly business reviews, while running the multichannel automation that sits underneath it.</p>
+      <ul class="role-points">
+        <li>Led daily scrum meetings with clients and internal teams to keep goals, timelines and deliverables aligned.</li>
+        <li>Executed ad hoc and always on multichannel campaigns using segmentation built on location, behaviour, purchase history and preferences, via data extensions and SQL.</li>
+        <li>Built CloudPages with AMPscript and SSJS for product feedback capture and personalized, downloadable content.</li>
+        <li>Designed automation workflows in Journey Builder and Automation Studio, combining SQL, import, filter and file transfer activities.</li>
+        <li>Ran A/B and multivariate testing, reporting results through Einstein Analytics and custom SQL reports.</li>
+        <li>Managed send definitions and transactional journeys through the Marketing Cloud Transactional Messaging API.</li>
+        <li>Produced monthly business review reports presenting performance, engagement and opportunities to clients.</li>
       </ul>
     </div>
-  </div>
-  <div class="exp-item reveal">
-    <div class="exp-meta">
-      <div class="exp-period">Sept 2021 — June 2024</div>
-      <div class="exp-company">Cloudprism Solutions</div>
-      <div class="exp-location">Pune, India</div>
-    </div>
-    <div class="exp-content">
-      <div class="exp-title">Senior Salesforce Developer</div>
-      <ul class="exp-bullets">
-        <li>Engineered API integrations to embed website forms directly into SFMC and trigger automated journeys without intermediary CloudPages.</li>
-        <li>Built a centralized preference center enabling users to manage communication preferences efficiently.</li>
-        <li>Developed dynamic CloudPages using SSJS for advanced use cases including image uploads and personalized content delivery.</li>
-        <li>Managed high-volume deadline-driven campaigns using Content Builder, Email Studio, Query Studio, and Automation Studio.</li>
-        <li>Created Pardot campaigns with responsive templates, Engagement Studio automation, and lead scoring for improved conversions.</li>
-        <li>Implemented lead capture strategies and integrated partner-generated leads into Pardot with analytics tracking.</li>
-        <li>Demonstrated expertise across Flow Builder, Formula Fields, Object Relationships, Reports, and Salesforce admin tasks.</li>
+
+    <div class="role-block">
+      <div class="role-top">
+        <div>
+          <h3>Senior Salesforce Developer</h3>
+          <div class="role-org">Cloudprism Solutions, Pune</div>
+        </div>
+        <div class="period">Sept 2021 — June 2024</div>
+      </div>
+      <p class="role-desc">Owned client calls end to end and translated them into working Salesforce solutions across Marketing Cloud, Pardot and Sales Cloud.</p>
+      <ul class="role-points">
+        <li>Built dynamic CloudPages with SSJS for image uploads and personalized content delivery.</li>
+        <li>Engineered REST and SOAP API integrations to embed website forms directly into SFMC and trigger event based journeys.</li>
+        <li>Built a centralized preference center so subscribers could manage their own communication preferences.</li>
+        <li>Automated proof approvals, data imports and exports, and triggered responses to form submissions.</li>
+        <li>Ran lead capture, scoring and dynamic content personalization in Pardot to improve pipeline conversion.</li>
+        <li>Managed sprint tasks and bugs in JIRA within an Agile / Scrum environment.</li>
       </ul>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- SKILLS -->
 <section id="skills">
-  <div class="section-header reveal">
-    <div class="section-index">02 - Skills</div>
-    <h2>Technical Expertise</h2>
-  </div>
-  <div class="skills-grid">
-    <div class="skill-group reveal">
-      <div class="skill-group-title">SFMC Core</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Email Studio</span>
-        <span class="skill-tag">Journey Builder</span>
-        <span class="skill-tag">Automation Studio</span>
-        <span class="skill-tag">Content Builder</span>
-        <span class="skill-tag">CloudPages</span>
-        <span class="skill-tag">Query Studio</span>
-        <span class="skill-tag">Data Extensions</span>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Skills</div>
+        <h2>Tools I reach for.</h2>
       </div>
     </div>
-    <div class="skill-group reveal">
-      <div class="skill-group-title">Development</div>
-      <div class="skill-tags">
-        <span class="skill-tag">AMPscript</span>
-        <span class="skill-tag">SSJS</span>
-        <span class="skill-tag">SQL</span>
-        <span class="skill-tag">REST API</span>
-        <span class="skill-tag">HTML / CSS</span>
-        <span class="skill-tag">SOAP API</span>
+    <div class="skill-groups">
+      <div>
+        <h4>Platform &amp; development</h4>
+        <div class="tag-row">
+          <span class="tag">Journey Builder</span>
+          <span class="tag">Automation Studio</span>
+          <span class="tag">Email Studio</span>
+          <span class="tag">Content Builder</span>
+          <span class="tag">CloudPages &amp; Web Studio</span>
+          <span class="tag">AMPscript</span>
+          <span class="tag">SSJS</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Marketing Cloud REST &amp; SOAP APIs</span>
+          <span class="tag">HTML / CSS email</span>
+        </div>
       </div>
-    </div>
-    <div class="skill-group reveal">
-      <div class="skill-group-title">Salesforce Platforms</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Marketing Cloud</span>
-        <span class="skill-tag">Sales Cloud</span>
-        <span class="skill-tag">Service Cloud</span>
-        <span class="skill-tag">MC Account Engagement</span>
-        <span class="skill-tag">Data Cloud</span>
-        <span class="skill-tag">Flow Builder</span>
-      </div>
-    </div>
-    <div class="skill-group reveal">
-      <div class="skill-group-title">Marketing & Analytics</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Adobe Marketo</span>
-        <span class="skill-tag">A/B Testing</span>
-        <span class="skill-tag">Segmentation</span>
-        <span class="skill-tag">Email on Acid</span>
-        <span class="skill-tag">MBR Reporting</span>
-        <span class="skill-tag">FTP / SFTP</span>
-      </div>
-    </div>
-    <div class="skill-group reveal">
-      <div class="skill-group-title">Management</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Project Management</span>
-        <span class="skill-tag">Scrum / Agile</span>
-        <span class="skill-tag">Resource Allocation</span>
-        <span class="skill-tag">Strategic Planning</span>
-        <span class="skill-tag">Team Mentorship</span>
-        <span class="skill-tag">Client Relations</span>
-      </div>
-    </div>
-    <div class="skill-group reveal">
-      <div class="skill-group-title">Integrations & Data</div>
-      <div class="skill-tags">
-        <span class="skill-tag">API Integrations</span>
-        <span class="skill-tag">Transactional Messaging API</span>
-        <span class="skill-tag">Data Imports/Exports</span>
-        <span class="skill-tag">Preference Center</span>
-        <span class="skill-tag">MuleSoft</span>
-        <span class="skill-tag">Lead Scoring</span>
+      <div>
+        <h4>Delivery &amp; leadership</h4>
+        <div class="tag-row">
+          <span class="tag">Project management</span>
+          <span class="tag">Strategic planning</span>
+          <span class="tag">Client relationship management</span>
+          <span class="tag">Team leadership &amp; mentoring</span>
+          <span class="tag">Agile / Scrum</span>
+          <span class="tag">A/B testing &amp; analytics</span>
+          <span class="tag">JIRA</span>
+          <span class="tag">Email on Acid</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- CERTIFICATIONS -->
 <section id="certifications">
-  <div class="section-header reveal">
-    <div class="section-index">03 - Certifications</div>
-    <h2>Salesforce Credentials</h2>
-  </div>
-  <div class="certs-grid">
-    <div class="cert-card reveal">
-      <div class="cert-icon">SF</div>
-      <div class="cert-name">Salesforce Certified Administrator</div>
-      <div class="cert-issuer">Salesforce</div>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Certifications</div>
+        <h2>Building knowledge beyond the work.</h2>
+      </div>
     </div>
-    <div class="cert-card reveal">
-      <div class="cert-icon">MC</div>
-      <div class="cert-name">Marketing Cloud Email Specialist</div>
-      <div class="cert-issuer">Salesforce</div>
+    <div class="cert-list">
+      <div>
+        <div class="cname">Salesforce Certified Administrator</div>
+        <div class="cbody">Salesforce</div>
+      </div>
+      <div>
+        <div class="cname">Marketing Cloud Email Specialist</div>
+        <div class="cbody">Salesforce</div>
+      </div>
+      <div>
+        <div class="cname">Data Cloud Consultant</div>
+        <div class="cbody">Salesforce</div>
+      </div>
     </div>
-    <div class="cert-card reveal">
-      <div class="cert-icon">DC</div>
-      <div class="cert-name">Data Cloud Consultant</div>
-      <div class="cert-issuer">Salesforce</div>
+
+    <div style="margin-top:56px;">
+      <div class="eyebrow">Education</div>
+      <div class="edu-row">
+        <div class="school">Bachelor of Computer Applications, Manipal University, Jaipur</div>
+        <div class="yrs">2022 — 2025</div>
+      </div>
+      <div class="edu-row">
+        <div class="school">Intermediate, Anugrah Narayan College, Patna</div>
+        <div class="yrs">2017 — 2019</div>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="section-header reveal">
-    <div class="section-index">04 - Projects</div>
-    <h2>Selected Projects</h2>
-    <p style="margin-top:0.75rem; font-size:0.88rem; color:var(--muted); max-width:60ch;">A selection of major client engagements. These represent key highlights the full body of work spans many more projects across industries.</p>
-  </div>
-  <div class="exp-item reveal">
-    <div class="exp-meta">
-      <div class="exp-company">Project 1</div>
-      <div class="exp-period">Automotive Industry</div>
-    </div>
-    <div class="exp-content">
-      <div class="exp-title">Multi-Channel Automotive CRM & Campaign Platform</div>
-      <ul class="exp-bullets">
-        <li>Managed end-to-end email, SMS, and WhatsApp campaigns across automotive customer lifecycle stages bookings, test drives, service reminders, post-purchase, and lead nurturing.</li>
-        <li>Designed Journey Builder workflows and advanced AMPscript for personalization, conditional content, tracking, and real-time data lookups.</li>
-        <li>Built responsive HTML email templates, modular content blocks, and CloudPages for bookings, surveys, lead capture, and preference centers.</li>
-        <li>Set up API-triggered sends via REST and SOAP APIs for booking confirmations, payment updates, and lead alerts.</li>
-        <li>Configured SPF, DKIM, and DMARC on delegated domains; handled IP warming, deliverability improvements, and domain health monitoring.</li>
-        <li>Managed large-scale datasets ensuring compliance with auto-industry data governance, consent management, and opt-in regulations.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="exp-item reveal">
-    <div class="exp-meta">
-      <div class="exp-company">Project 2</div>
-      <div class="exp-period">Biopharmaceutical / Life Sciences</div>
-    </div>
-    <div class="exp-content">
-      <div class="exp-title">Salesforce Data Cloud & SFMC Implementation</div>
-      <ul class="exp-bullets">
-        <li>Led data migration into Salesforce; set up Business Units, user roles, and access controls across Data Cloud and SFMC.</li>
-        <li>Integrated multiple data sources via APIs Salesforce, FTP, CloudPages, and third-party systems for consistent data ingestion.</li>
-        <li>Built relational data models using Data Extensions, Attribute Groups, and Lists for a unified 360° customer view.</li>
-        <li>Activated Data Cloud audiences into SFMC for personalized campaigns across email, mobile, and web channels.</li>
-        <li>Orchestrated multi-channel journeys using Journey Builder with Data Cloud profiles, behavioural triggers, and API events.</li>
-        <li>Created Calculated Insights for business metrics; implemented IP Warming for improved deliverability and compliance.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="exp-item reveal">
-    <div class="exp-meta">
-      <div class="exp-company">Project 3</div>
-      <div class="exp-period">Quartz Countertops & Surfaces</div>
-    </div>
-    <div class="exp-content">
-      <div class="exp-title">Pardot (MCAE) Operations</div>
-      <ul class="exp-bullets">
-        <li>Managed Cambria's Pardot setup including automation rules, completion actions, custom redirects, and Engagement Studio programs.</li>
-        <li>Built email templates, landing pages, and forms for sample requests, showroom visits, and lead capture aligned to brand guidelines.</li>
-        <li>Configured Pardot–Salesforce sync with field mapping, lead assignment rules, scoring, and grading.</li>
-        <li>Used dynamic lists and automation rules to target homeowners, dealers, fabricators, designers, and commercial partners.</li>
-        <li>Built Pardot reports and Salesforce dashboards to track sample requests, engagement rates, and campaign impact.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="exp-item reveal">
-    <div class="exp-meta">
-      <div class="exp-company">Project 4</div>
-      <div class="exp-period">Clothing & Home Goods</div>
-    </div>
-    <div class="exp-content">
-      <div class="exp-title">SFMC Implementation & Campaign Operations</div>
-      <ul class="exp-bullets">
-        <li>Built responsive HTML emails with personalization, dynamic content, Smart Capture forms, and CloudPages in Email Studio.</li>
-        <li>Automated business processes in Automation Studio and created end-to-end Journey Builder journeys; managed Data Extensions in Contact Builder.</li>
-        <li>Supported full SFMC implementation setup, configuration, data migration, and Marketing Cloud Connect CRM sync.</li>
-        <li>Used Email Studio reports, data extracts, and SQL to analyse engagement metrics using Data Views and Analytics Builder.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="exp-item reveal">
-    <div class="exp-meta">
-      <div class="exp-company">Project 5</div>
-      <div class="exp-period">Advertising & Billboard</div>
-    </div>
-    <div class="exp-content">
-      <div class="exp-title">Salesforce CRM + SFMC + Data Cloud Integration</div>
-      <ul class="exp-bullets">
-        <li>Set up a Salesforce CRM org from scratch custom objects, fields, flows, profiles, permission sets, and validation rules.</li>
-        <li>Integrated Salesforce CRM with SFMC via Marketing Cloud Connect for real-time data synchronization and automation.</li>
-        <li>Built personalized Email, SMS, and Push content leveraging Data Cloud segments and advanced SFMC capabilities.</li>
-        <li>Managed SSL, DNS, SPF/DKIM/DMARC; defined segmentation strategies and executed A/B testing with custom Data Extensions.</li>
-        <li>Used Postman to test triggered campaigns, validate API-based subscriber data, and monitor API performance.</li>
-      </ul>
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2>Say hi, or send over a brief.</h2>
+    <p class="lede">Based in Pune and open to Salesforce Marketing Cloud and campaign management conversations.</p>
+    <div class="contact-links">
+      <a href="mailto:tushark.sfmc@gmail.com">tushar.kumar1107@gmail.com</a>
+      <a href="tel:+917739908469">+91 9123298469</a>
+      <a href="https://www.linkedin.com/in/tushar-kumar2507/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- EDUCATION -->
-<section id="education">
-  <div class="section-header reveal">
-    <div class="section-index">05 — Education</div>
-    <h2>Academic Background</h2>
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:10px;">
+    <span>Tushar Kumar, Pune</span>
+    <span>Updated 2026</span>
   </div>
-  <div class="edu-card reveal">
-    <div class="edu-year">BCA</div>
-    <div>
-      <div class="edu-degree">Bachelor of Computer Applications</div>
-      <div class="edu-uni">Manipal University, Jaipur, India</div>
-      <div class="edu-period">2022 — 2025</div>
-    </div>
-  </div>
-</section>
+</footer>
 
-<div class="divider"></div>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-index reveal">06 — Contact</div>
-  <h2 class="reveal">Let's Build <em style="font-style:italic; color:var(--accent)">Something.</em></h2>
-  <p class="reveal">Open to new challenges, consulting opportunities, and conversations about marketing automation at scale.</p>
-  <div class="contact-links reveal">
-    <a href="mailto:tushar.kumar1107@gmail.com" class="contact-link">
-      <span class="contact-link-label">Email</span>
-      <span class="contact-link-val">tushar.kumar1107@gmail.com</span>
-    </a>
-    <a href="tel:+919123298469" class="contact-link">
-      <span class="contact-link-label">Phone</span>
-      <span class="contact-link-val">+91 91232 98469</span>
-    </a>
-    <a href="https://www.linkedin.com/in/tushar-kumar6/" target="_blank" class="contact-link">
-      <span class="contact-link-label">LinkedIn</span>
-      <span class="contact-link-val">View Profile →</span>
-    </a>
-    <a href="#" class="contact-link">
-      <span class="contact-link-label">Location</span>
-      <span class="contact-link-val">Pune, Maharashtra</span>
-    </a>
-  </div>
-  <div class="footer-line">© 2025 Tushar Kumar — SFMC Developer & Campaign Manager</div>
-</section>
-
-<script>
-  // Hamburger
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-  });
-  document.querySelectorAll('.mm-link').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
-    });
-  });
-
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 60);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08 });
-  reveals.forEach(el => observer.observe(el));
-</script>
 </body>
 </html>
